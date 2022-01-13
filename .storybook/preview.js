@@ -9,4 +9,21 @@ export const parameters = {
     },
   },
   layout: "centered",
+  backgrounds: {
+    default: "nrx",
+    values: [
+      {
+        name: "nrx",
+        value: "#ededed",
+      },
+      {
+        name: "white",
+        value: "#ffffff",
+      },
+      {
+        name: "black",
+        value: "#000000",
+      },
+    ],
+  },
 };

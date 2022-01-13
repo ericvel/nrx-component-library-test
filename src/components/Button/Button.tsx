@@ -1,23 +1,28 @@
 import React from "react";
 import "./button.css";
 
-export interface ButtonProps {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
-   * Is this the principal call to action on the page?
+   * Component content
    */
-  primary?: boolean;
+  children: React.ReactNode;
   /**
-   * What background color to use
+   * Changes design and interactions
+   * @default "primary"
    */
-  backgroundColor?: string;
+  variant?: "primary" | "secondary" | "tertiary" | "danger";
   /**
-   * How large should the button be?
+   * Changes padding, height and font-size
+   * @default "medium"
    */
-  size?: "small" | "medium" | "large";
+  size?: "medium" | "small";
   /**
-   * Button contents
+   * Prevent the user from interacting with the button: it cannot be pressed or focused.
+   * @note Avoid using if possible for accessibility purposes
+   * @default false
    */
-  label: string;
+  disabled?: boolean;
   /**
    * Optional click handler
    */
@@ -28,25 +33,24 @@ export interface ButtonProps {
  * Primary UI component for user interaction
  */
 const Button = ({
-  primary = true,
-  backgroundColor,
+  variant = "primary",
   size = "medium",
   onClick,
-  label,
+  children,
+  disabled = false,
 }: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
   return (
     <button
       type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={backgroundColor ? { backgroundColor } : {}}
+      className={[
+        "nrx-button",
+        `nrx-button--${size}`,
+        `nrx-button--${variant}`,
+      ].join(" ")}
       onClick={onClick}
+      disabled={disabled}
     >
-      {label}
+      {children}
     </button>
   );
 };
