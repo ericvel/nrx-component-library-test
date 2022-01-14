@@ -11,7 +11,7 @@ export interface LinkProps
    */
   openInNewTab: boolean;
   /**
-   * Changes padding, height and font-size
+   * Changes font-size
    * @default "medium"
    */
   size?: "medium" | "small";
@@ -23,7 +23,6 @@ export default function Link({
   openInNewTab = false,
   size = "medium",
 }: LinkProps) {
-  // const sizeClasses = size === "medium" ? "text-s"
   const textSize = {
     medium: "text-sm",
     small: "text-xs",

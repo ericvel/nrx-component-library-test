@@ -3,16 +3,16 @@
   @apply font-bold;
 }
 .nrx-button--primary {
-  @apply text-white bg-nrxRed;
+  @apply text-white bg-nrxRed border-transparent border-2 hover:bg-transparent hover:text-nrxRed hover:border-nrxRed transition duration-200;
 }
 .nrx-button--secondary {
-  @apply text-nrxRed bg-transparent border-nrxRed border-2;
+  @apply text-nrxRed bg-transparent border-nrxRed border-2 hover:bg-nrxRed hover:text-white hover:border-transparent transition duration-200;
 }
 .nrx-button--tertiary {
-  @apply text-nrxRed bg-transparent;
+  @apply text-nrxRed bg-transparent hover:text-red-800 transition duration-200;
 }
 .nrx-button--danger {
-  @apply text-black bg-orange-500;
+  @apply text-black bg-orange-500 border-2 border-transparent hover:text-orange-500 hover:border-orange-500 hover:bg-transparent transition duration-200;
 }
 .nrx-button--small {
   font-size: 12px;
