@@ -8,7 +8,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  layout: "centered",
+  // layout: "centered",
   backgrounds: {
     default: "nrx",
     values: [

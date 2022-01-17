@@ -1,22 +1,36 @@
 import React from "react";
 
-export interface EventCardProps {
-  /**
-   * What event does the card present?
-   */
-  event: {
-    title: string;
-    category: string;
-    startDate: Date;
-    endDate: Date;
-    location: string;
-    participationStatus: number;
-  };
+export interface Event {
+  id: string;
+  title: string;
+  category: string;
+  startDate: Date;
+  endDate: Date;
+  location: string;
+  participationStatus:
+    | "NOT_ANSWERED"
+    | "IS_NOT_PARTICIPATING"
+    | "IS_PARTICIPATING";
 }
 
-function EventCard({ event }: EventCardProps) {
-  let { title, category, startDate, endDate, location, participationStatus } =
-    event;
+export interface EventCardProps {
+  /**
+   * The event object that the card represents
+   */
+  event: Event;
+  onPressAttend: (id: string) => {};
+}
+
+export default function EventCard({ event, onPressAttend }: EventCardProps) {
+  let {
+    id,
+    title,
+    category,
+    startDate,
+    endDate,
+    location,
+    participationStatus,
+  } = event;
 
   // Validate start and end dates
   if (
@@ -44,39 +58,44 @@ function EventCard({ event }: EventCardProps) {
     minute: "numeric",
   });
 
-  const statusTexts = ["Ikke svart", "Du deltar ikke", "Du deltar"];
-  const statusColors = ["text-red-500", "text-red-500", "text-green-500"];
+  const statusTexts = {
+    NOT_ANSWERED: "Ikke svart",
+    IS_NOT_PARTICIPATING: "Du deltar ikke",
+    IS_PARTICIPATING: "Du deltar",
+  };
+
+  const statusTextColor = {
+    NOT_ANSWERED: "text-red-500",
+    IS_NOT_PARTICIPATING: "text-red-500",
+    IS_PARTICIPATING: "text-green-500",
+  };
 
   return (
     <div
-      className={`grid grid-cols-12 bg-white h-48 items-center border-green-500 ${
-        participationStatus === 2 ? "border-l-8" : ""
+      className={`flex px-8 gap-x-8 bg-white max-w-4xl h-48 items-center border-l-8 ${
+        participationStatus === "IS_PARTICIPATING"
+          ? "border-green-500"
+          : "border-transparent"
       }`}
     >
-      <div className="col-span-2 justify-center">
-        <p className="text-center flex flex-col text-gray-500">
-          <span className="text-2xl desktop:text-4xl">{startDay} </span>
-          <span className="uppercase desktop:text-xl">{startMonth}</span>
+      <p className="w-28 text-center flex flex-col text-gray-500">
+        <span className="text-2xl desktop:text-4xl">{startDay} </span>
+        <span className="uppercase desktop:text-xl">{startMonth}</span>
+      </p>
+      <div className="grow">
+        <p className="uppercase text-gray-500 text-xs">{category}</p>
+        <h2 className="text-xl font-bold mb-2">{title}</h2>
+        <p className="mb-2 capitalize">
+          {startWeekday} {startTime} - {endTime}
         </p>
+        {location !== "" ? <p>{location}</p> : null}
       </div>
-      <div className="col-span-8">
-        <div>
-          <p className="uppercase text-gray-500 text-xs">{category}</p>
-          <h2 className="text-xl font-bold mb-2">{title}</h2>
-          <p className="mb-2 capitalize">
-            {startWeekday} {startTime} - {endTime}
-          </p>
-          {location !== "" ? <p>{location}</p> : null}
-          {/* {<p className="font-bold">Påmelding åpen</p>} */}
-        </div>
-      </div>
-      <div className="col-span-2">
-        <p className={`font-bold ${statusColors[participationStatus]}`}>
-          {statusTexts[participationStatus]}
-        </p>
-      </div>
+      <button
+        onClick={() => onPressAttend(id)}
+        className={`w-28 font-bold ${statusTextColor[participationStatus]}`}
+      >
+        {statusTexts[participationStatus]}
+      </button>
     </div>
   );
 }
-
-export default EventCard;
