@@ -14,7 +14,7 @@ export interface EventCardProps {
   };
 }
 
-export default function EventCard({ event }: EventCardProps) {
+function EventCard({ event }: EventCardProps) {
   let { title, category, startDate, endDate, location, participationStatus } =
     event;
 
@@ -78,3 +78,5 @@ export default function EventCard({ event }: EventCardProps) {
     </div>
   );
 }
+
+export default EventCard;

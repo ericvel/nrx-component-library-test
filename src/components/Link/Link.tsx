@@ -17,7 +17,7 @@ export interface LinkProps
   size?: "medium" | "small";
 }
 
-export default function Link({
+function Link({
   children,
   href,
   openInNewTab = false,
@@ -38,3 +38,5 @@ export default function Link({
     </a>
   );
 }
+
+export default Link;

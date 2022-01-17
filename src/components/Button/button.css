@@ -1,15 +1,23 @@
 .nrx-button {
-  /* display: inline-block; */
   @apply font-bold;
 }
 .nrx-button--primary {
-  @apply text-white bg-nrxRed border-transparent border-2 hover:bg-transparent hover:text-nrxRed hover:border-nrxRed transition duration-200;
+  @apply text-white bg-nrxRed border-transparent border-2;
+}
+.nrx-button--primary:hover {
+  @apply bg-transparent text-nrxRed border-nrxRed transition duration-200;
 }
 .nrx-button--secondary {
-  @apply text-nrxRed bg-transparent border-nrxRed border-2 hover:bg-nrxRed hover:text-white hover:border-transparent transition duration-200;
+  @apply text-nrxRed bg-transparent border-nrxRed border-2;
+}
+.nrx-button--secondary:hover {
+  @apply bg-nrxRed text-white border-transparent transition duration-200;
 }
 .nrx-button--tertiary {
-  @apply text-nrxRed bg-transparent hover:text-red-800 transition duration-200;
+  @apply text-nrxRed bg-transparent border-2 border-transparent;
+}
+.nrx-button--tertiary:hover {
+  @apply border-nrxRed transition duration-200;
 }
 .nrx-button--danger {
   @apply text-black bg-orange-500 border-2 border-transparent hover:text-orange-500 hover:border-orange-500 hover:bg-transparent transition duration-200;
@@ -22,7 +30,6 @@
   font-size: 14px;
   padding: 11px 20px;
 }
-
 .nrx-button:disabled {
   @apply opacity-30;
 }

@@ -32,13 +32,13 @@ export interface ButtonProps
 /**
  * Primary UI component for user interaction
  */
-const Button = ({
+function Button({
   variant = "primary",
   size = "medium",
   onClick,
   children,
   disabled = false,
-}: ButtonProps) => {
+}: ButtonProps) {
   return (
     <button
       type="button"
@@ -53,6 +53,6 @@ const Button = ({
       {children}
     </button>
   );
-};
+}
 
 export default Button;
