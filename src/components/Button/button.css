@@ -1,26 +1,29 @@
 .nrx-button {
-  @apply font-bold;
+  @apply font-bold border-2 border-transparent transition duration-100;
 }
 .nrx-button--primary {
-  @apply text-white bg-nrxRed border-transparent border-2;
+  @apply text-white bg-nrxRed;
 }
 .nrx-button--primary:hover {
-  @apply bg-transparent text-nrxRed border-nrxRed transition duration-200;
+  @apply text-nrxRed bg-transparent border-nrxRed;
 }
 .nrx-button--secondary {
-  @apply text-nrxRed bg-transparent border-nrxRed border-2;
+  @apply text-nrxRed bg-transparent border-nrxRed;
 }
 .nrx-button--secondary:hover {
-  @apply bg-nrxRed text-white border-transparent transition duration-200;
+  @apply text-white bg-nrxRed border-transparent;
 }
 .nrx-button--tertiary {
-  @apply text-nrxRed bg-transparent border-2 border-transparent;
+  @apply text-nrxRed bg-transparent;
 }
 .nrx-button--tertiary:hover {
-  @apply border-nrxRed transition duration-200;
+  @apply border-nrxRed;
 }
 .nrx-button--danger {
-  @apply text-black bg-orange-500 border-2 border-transparent hover:text-orange-500 hover:border-orange-500 hover:bg-transparent transition duration-200;
+  @apply text-black bg-orange-500;
+}
+.nrx-button--danger:hover {
+  @apply text-orange-500 bg-transparent border-orange-500;
 }
 .nrx-button--small {
   font-size: 12px;
@@ -31,5 +34,5 @@
   padding: 11px 20px;
 }
 .nrx-button:disabled {
-  @apply opacity-30;
+  @apply opacity-30 pointer-events-none;
 }

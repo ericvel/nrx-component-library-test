@@ -30,7 +30,7 @@ export interface ButtonProps
 }
 
 /**
- * Primary UI component for user interaction
+ * Buttons allow users to take actions, and make choices, with a single click.
  */
 function Button({
   variant = "primary",
