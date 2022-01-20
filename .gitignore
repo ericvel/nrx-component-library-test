@@ -1,5 +1,7 @@
 # New
 /lib
+/storybook-static
+build-storybook.log
 
 # Defaults
 .idea/
