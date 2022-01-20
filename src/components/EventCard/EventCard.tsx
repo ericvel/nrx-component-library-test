@@ -72,7 +72,7 @@ export default function EventCard({ event, onPressAttend }: EventCardProps) {
 
   return (
     <div
-      className={`flex px-8 gap-x-8 bg-white max-w-4xl h-48 items-center border-l-8 ${
+      className={`flex px-8 gap-x-8 bg-yellow-400 max-w-4xl h-48 items-center border-l-8 ${
         participationStatus === "IS_PARTICIPATING"
           ? "border-green-500"
           : "border-transparent"
