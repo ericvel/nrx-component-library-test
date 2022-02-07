@@ -10,12 +10,8 @@ export const parameters = {
   },
   // layout: "centered",
   backgrounds: {
-    default: "nrx",
+    default: "white",
     values: [
-      {
-        name: "nrx",
-        value: "#ededed",
-      },
       {
         name: "white",
         value: "#ffffff",
