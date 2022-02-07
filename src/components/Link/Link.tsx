@@ -9,7 +9,7 @@ export interface LinkProps
   /**
    * Should the link open in a new tab?
    */
-  openInNewTab: boolean;
+  openInNewTab?: boolean;
   /**
    * Changes font-size
    * @default "medium"
