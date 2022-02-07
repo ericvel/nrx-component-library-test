@@ -1,4 +1,4 @@
-# nrx-component-library
+# nrx-component-library-test
 
 ## Setup
 1. Install packages
