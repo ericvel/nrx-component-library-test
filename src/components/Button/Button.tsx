@@ -11,15 +11,14 @@ export interface ButtonProps
    * Changes design and interactions
    * @default "primary"
    */
-  variant?: "primary" | "secondary" | "tertiary" | "danger";
+  variant?: "primary" | "secondary" | "outlined" | "danger" | "ghost";
   /**
    * Changes padding, height and font-size
-   * @default "medium"
+   * @default "default"
    */
-  size?: "medium" | "small";
+  size?: "default" | "medium" | "small";
   /**
-   * Prevent the user from interacting with the button: it cannot be pressed or focused.
-   * @note Avoid using if possible for accessibility purposes
+   * Prevent the user from interacting with the button: it cannot be pressed or focused
    * @default false
    */
   disabled?: boolean;

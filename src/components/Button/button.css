@@ -1,38 +1,83 @@
 .nrx-button {
-  @apply font-bold border-2 border-transparent transition duration-100;
+  @apply uppercase font-bold transition duration-100 rounded-md flex gap-x-3 items-center px-6;
 }
+.nrx-button:focus {
+  @apply rounded-none;
+}
+.nrx-button:disabled {
+  @apply bg-nrxGray30 text-nrxGray40 pointer-events-none;
+}
+
+/* Position */
+.nrx-button--start {
+  @apply flex-row;
+}
+.nrx-button--end {
+  @apply flex-row-reverse;
+}
+
+/* Primary */
 .nrx-button--primary {
   @apply text-white bg-nrxRed;
 }
 .nrx-button--primary:hover {
-  @apply text-nrxRed bg-transparent border-nrxRed;
+  @apply bg-nrxRust;
 }
+.nrx-button--primary:active {
+  @apply bg-nrxDirt;
+}
+
+/* Secondary */
 .nrx-button--secondary {
-  @apply text-nrxRed bg-transparent border-nrxRed;
+  @apply text-white bg-nrxBlack;
+}
+.nrx-button--secondary:active {
+  @apply bg-nrxGray100;
 }
 .nrx-button--secondary:hover {
-  @apply text-white bg-nrxRed border-transparent;
+  @apply bg-nrxGray80;
 }
-.nrx-button--tertiary {
-  @apply text-nrxRed bg-transparent;
+
+/* Outlined */
+.nrx-button--outlined {
+  @apply text-nrxRed bg-transparent border border-nrxRed;
 }
-.nrx-button--tertiary:hover {
-  @apply border-nrxRed;
+.nrx-button--outlined:hover {
+  @apply border-nrxDirt text-nrxDirt;
 }
+.nrx-button--outlined:active {
+  @apply text-nrxDirt border-nrxDirt;
+}
+
+/* Danger */
 .nrx-button--danger {
-  @apply text-black bg-orange-500;
+  @apply text-nrxRust bg-nrxLightPink;
+}
+.nrx-button--danger:active {
+  @apply text-white bg-nrxDirt;
 }
 .nrx-button--danger:hover {
-  @apply text-orange-500 bg-transparent border-orange-500;
+  @apply text-white bg-nrxRust;
 }
-.nrx-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
+
+/* Ghost */
+.nrx-button--ghost {
+  @apply bg-transparent border-none text-nrxRed;
+}
+.nrx-button--ghost:active {
+  @apply text-nrxRust;
+}
+.nrx-button--ghost:hover {
+  @apply text-nrxDirt;
+}
+
+/* Size */
+.nrx-button--default {
+  @apply text-sm h-12;
 }
 .nrx-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
+  @apply text-sm hue-rotate-180;
 }
-.nrx-button:disabled {
-  @apply opacity-30 pointer-events-none;
+.nrx-button--small {
+  @apply text-xs h-[36];
 }

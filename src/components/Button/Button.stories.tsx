@@ -16,7 +16,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   variant: "primary",
   children: "Primary",
-  size: "medium",
+  size: "default",
   disabled: false,
   onClick: () => {
     alert("Button was clicked.");
@@ -30,11 +30,11 @@ Secondary.args = {
   children: "Secondary",
 };
 
-export const Tertiary = Template.bind({});
-Tertiary.args = {
+export const Outlined = Template.bind({});
+Outlined.args = {
   ...Primary.args,
-  variant: "tertiary",
-  children: "Tertiary",
+  variant: "outlined",
+  children: "Outlined",
 };
 
 export const Danger = Template.bind({});
@@ -42,4 +42,11 @@ Danger.args = {
   ...Primary.args,
   variant: "danger",
   children: "Danger",
+};
+
+export const Ghost = Template.bind({});
+Ghost.args = {
+  ...Primary.args,
+  variant: "ghost",
+  children: "Ghost",
 };
